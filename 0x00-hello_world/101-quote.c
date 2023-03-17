@@ -9,6 +9,9 @@
  */
 int main(void)
 {
-	write(1,"and that piece of art is useful\" - Dora Korpar, 2015-10-19",strlen("and that piece of art is useful\" - Dora Korpar, 2015-10-19"));
+	char ch[59] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+
+	for(int i = 0 ; i < strlen(ch) ; i++)
+		putchar(ch[i]);
 	return (1);
 }

@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int decimal = 47;
+	int decimal = 48;
 	/* Declerations */
 	/* Statements */
 	while (decimal < 58)

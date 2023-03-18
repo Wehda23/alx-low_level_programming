@@ -6,15 +6,16 @@
 int main(void)
 {
 	int decimal = 48;
-	int sign = 44;
 	/* Declerations */
 	/* Statements */
 	while (decimal < 58)
 	{
 		putchar(decimal);
 		if (decimal < 57)
-			putchar(44);
-			putchar(32);
+		{
+		putchar(44);
+		putchar(32);
+		}
 		++decimal;
 	}
 	putchar(10);

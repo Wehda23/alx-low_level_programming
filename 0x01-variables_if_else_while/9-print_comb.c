@@ -12,10 +12,9 @@ int main(void)
 	while (decimal < 58)
 	{
 		putchar(decimal);
-		if (decimal == 57)
-			sign = 36;
-		putchar(sign);
-		putchar(32);
+		if (decimal < 57)
+			putchar(44);
+			putchar(32);
 		++decimal;
 	}
 	putchar(10);

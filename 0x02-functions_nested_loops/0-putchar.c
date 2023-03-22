@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * Main - Entry Point
+ * main - Check description
+ * Description: It prints the word _putchar, followed by a new line.
  * Return: Always 0 (Success)
  */
 int main(void)

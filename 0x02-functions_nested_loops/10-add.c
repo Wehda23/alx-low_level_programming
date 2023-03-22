@@ -6,7 +6,7 @@
  * @b: inputer integer
  * Return: Sum of the two inputs
  */
-int add(a, b)
+int add(int a, int b)
 {
 	return (a + b);
 }

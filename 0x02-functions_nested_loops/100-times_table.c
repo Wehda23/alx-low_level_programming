@@ -7,16 +7,16 @@
  */
 void print_times_table(int n)
 {
-	int i;
+	int i, j;
 
 	if (n <= 15 && n > 0)
 	{
-	for (; n < 15; n++)
+	for (i = 0; i < n; i++)
 	{
 		_putchar('0');
-		for (i = 0; i <= n; i++)
+		for (j = 1; j <= n; j++)
 		{
-			putformat(i * n);
+			putformat(i * j);
 		}
 		_putchar('\n');
 	}

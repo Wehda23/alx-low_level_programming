@@ -8,15 +8,15 @@
  * Return: pointer string
  */
 
-char * _memset(char *s, char b, unsigned int n)
+char *_memset(char *s, char b, unsigned int n)
 {
 
-    unsigned int index = 0;
+	unsigned int index = 0;
 
-    while (index < n)
-    {
-        *(s + index) = b;
-        index++;
-    }
-    return (s);
+	while (index < n)
+	{
+		*(s + index) = b;
+		index++;
+	}
+	return (s);
 }

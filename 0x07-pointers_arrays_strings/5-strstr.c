@@ -16,19 +16,19 @@ char *_strstr(char *haystack, char *needle)
 		index = 0;
 
 		for (; *haystack != '\0'; haystack++)
-        {
-            char *first = haystack;
-            char *second = needle;
+		{
+			char *first = haystack;
+			char *second = needle;
 
-            while (*first == *second && *second != '\0')
-            {
-                first++;
-                second++;
-            }
+			while (*first == *second && *second != '\0')
+			{
+				first++;
+				second++;
+			}
 
-            if (*second == '\0')
-                return (haystack);
-        }
+			if (*second == '\0')
+				return (haystack);
+		}
 
 		haystack++;
 	}

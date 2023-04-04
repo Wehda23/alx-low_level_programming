@@ -9,11 +9,9 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int index;
 
 	while (*haystack)
 	{
-		index = 0;
 
 		for (; *haystack != '\0'; haystack++)
 		{

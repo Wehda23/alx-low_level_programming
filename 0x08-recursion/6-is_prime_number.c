@@ -21,7 +21,7 @@ int check_prime(int number, int divisable_number)
 }
 
 /**
- * int is_prime_number - function that checks if input is prime number
+ * is_prime_number - function that checks if input is prime number
  *                       or not.
  * @n: Integer input
  * Return: Returns 1 if the integer is a prime number, otherwise return 0

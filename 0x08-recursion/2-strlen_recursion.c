@@ -2,19 +2,18 @@
 
 /**
  * string_counter - helper function to get length of a string
- * 
  * @string: string input.
  * @length: integer input.
  * Return: Length of a string
  */
 int string_counter(char *string, int length)
 {
-    if (*string)
-    {
-        return (string_counter(string + 1, length + 1));
-    }
-    else
-        return (length);
+	if (*string)
+	{
+		return (string_counter(string + 1, length + 1));
+	}
+	else
+		return (length);
 
 }
 
@@ -29,6 +28,6 @@ int string_counter(char *string, int length)
 int _strlen_recursion(char *s)
 {
 
-    return (string_counter(s, 0));
+	return (string_counter(s, 0));
 
 }

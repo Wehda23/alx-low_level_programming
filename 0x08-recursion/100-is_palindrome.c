@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * check_palindrom - check for palindrom
@@ -10,39 +9,35 @@
  */
 int check_palindrom(char *string, int start, int end)
 {
-    
-    if(*string == '\0' || start >= end)
-    {
-        return (1);
-    }
-    else if(string[start] != string[end])
-    {
-        return (0);
-    }
-    {      
-        return (check_palindrom(string, start + 1, end - 1));
-    }
-    
 
+	if (*string == '\0' || start >= end)
+	{
+		return (1);
+	}
+	else if (string[start] != string[end])
+	{
+		return (0);
+	}
+	{
+		return (check_palindrom(string, start + 1, end - 1));
+	}
 
 }
 
 /**
  * is_palindrome - checks if a string is a palindrom.
- * 
- * @s: String input 
- * Return: retuns 1 if string is palindrom otherwise 0 
+ * @s: String input
+ * Return: retuns 1 if string is palindrom otherwise 0
  */
-
 int is_palindrome(char *s)
 {
-    int len;
+	int len;
 
-    while(*(s + len))
-    {
-        len = len + 1;
-    }
-    len -= 1;
+	while (*(s + len))
+	{
+		len = len + 1;
+	}
+	len -= 1;
 
-    return (check_palindrom(s, 0, len));
+	return (check_palindrom(s, 0, len));
 }

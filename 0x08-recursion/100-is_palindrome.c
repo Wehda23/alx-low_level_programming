@@ -33,11 +33,7 @@ int is_palindrome(char *s)
 {
 	int len;
 
-	while (*(s + len))
-	{
-		len = len + 1;
-	}
-	len -= 1;
+	len = _strlen_recursion(s);
 
 	return (check_palindrom(s, 0, len));
 }

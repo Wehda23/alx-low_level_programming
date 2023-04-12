@@ -1,27 +1,40 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * alloc_grid - prints buffer in hexa
- * @width: integer input
- * @height: integer input
- * Return: pointer to an integer input
+ * alloc_grid - create a 2-dimensional array with each element set to 0
+ * @width: desired number of columns
+ * @height: desired number of rows
+ *
+ * Return: NULL if memory allocation fails or any argument is less than 1,
+ * otherwise return a pointer to the first element of the array.
  */
-
 int **alloc_grid(int width, int height)
 {
-	int i, j;
-	int *ptr = NULL;
+	int **matrix, row, column;
 
-	if (width <= 0 || height <= 0)
+	if (width < 1 || height < 1)
 		return (NULL);
 
-	ptr = (int *)malloc(width * height * sizeof(int));
+	matrix = (int **) malloc(sizeof(int *) * height);
 
-	for (i = 0; i < width * height; i++)
+	if (!matrix)
+		return (NULL);
+
+	for (row = 0; row < height; ++row)
 	{
+		matrix[row] = (int *) malloc(sizeof(int) * width);
+
+		if (!matrix[row])
+		{
+			while (--row > -1)
+				free(matrix[row]);
+			free(matrix);
+			return (NULL);
+		}
+
+		for (column = 0; column < width; ++column)
+			matrix[row][column] = 0;
 	}
 
-	return (ptr);
+	return (matrix);
 }

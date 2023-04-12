@@ -1,31 +1,30 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * _strdup - prints buffer in hexa
- * @str: string pointer input
- * Return: pointer to a string
+ * _strdup - create a new array containing a copy of the given string
+ * @str: a pointer to the string to copy
+ *
+ * Return: NULL if str is NULL or if memory allocation fails,
+ * otherwise a return a pointer to the new copy
  */
-
 char *_strdup(char *str)
 {
-	int i = 0, j, k = 0;
-	char *newStr = NULL;
+	char *dup;
+	unsigned int size = 0;
 
-	while (str[k] != '\0')
+	if (str)
 	{
-		i++;
-		k++;
+		while (str[size++])
+			;
+
+		dup = malloc(sizeof(char) * size);
+		if (dup)
+		{
+			while (size--)
+				dup[size] = str[size];
+
+			return (dup);
+		}
 	}
-
-	newStr = malloc(sizeof(char) * (i + 1));
-
-	if (str == NULL)
-		return (NULL);
-
-	for (j = 0; j <= i; j++)
-		newStr[j] = str[j];
-
-	return (newStr);
+	return (NULL);
 }

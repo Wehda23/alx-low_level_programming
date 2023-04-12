@@ -6,35 +6,35 @@
  * str_concat - string that does some thing
  * @s1: string input
  * @s2: string input
- * Return: Charcter 
+ * Return: Charcter
  */
 
 char *str_concat(char *s1, char *s2)
 {
-  int i, j, k;
-  char *newStr = NULL;
+	int i, j, k;
+	char *newStr = NULL;
 
-  if (s1 == NULL)
-    s1 = "";
-  if (s2 == NULL)
-    s2 = "";
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
-  for (i = 0; s1[i] != '\0'; i++)
-    ;
+	for (i = 0; s1[i] != '\0'; i++)
+		;
 
-  for (j = 0; s2[j] != '\0'; j++)
-    ;
+	for (j = 0; s2[j] != '\0'; j++)
+		;
 
-  newStr = (char*)malloc((i + j) * sizeof(char));
+	newStr = (char *)malloc((i + j) * sizeof(char));
 
-  if (newStr == NULL)
-    return (NULL);
+	if (newStr == NULL)
+		return (NULL);
 
-  for (k = 0; s1[k] != '\0'; k++)
-    newStr[k] = s1[k];
+	for (k = 0; s1[k] != '\0'; k++)
+		newStr[k] = s1[k];
 
-  for (k = 0; s2[k] != '\0'; k++)
-    newStr[k + i] = s2[k];
+	for (k = 0; s2[k] != '\0'; k++)
+		newStr[k + i] = s2[k];
 
-  return (newStr);
+	return (newStr);
 }

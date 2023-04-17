@@ -19,10 +19,10 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (0);
 	}
-    else if (atoi(argv[1]) < 0)
-    {
-        printf("%d\n", 0);
-    }
+	else if (atoi(argv[1]) < 0)
+	{
+		printf("%d\n", 0);
+	}
 	else
 	{
 		cents = atoi(argv[1]);

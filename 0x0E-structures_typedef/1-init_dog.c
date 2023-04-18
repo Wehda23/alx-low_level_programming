@@ -6,6 +6,7 @@
  * @name: name of the dog passed on string argument.
  * @age: Age of the dog passed on integer argument.
  * @owner: Owner of the dog passed on argument.
+ * Return: Nothing.
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {

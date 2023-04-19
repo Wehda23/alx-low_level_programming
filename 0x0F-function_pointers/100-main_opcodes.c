@@ -2,12 +2,10 @@
 #include<stdlib.h>
 /**
  * main- Entry point
-(* a blank line
- *@argc: the number of parameters.
- *@argv: the parameeters in the case the number ob bytes.
-* Description: this program prints opcodes in hexa)?
-* Return: 0 in succes
-*/
+ * @argc: number input parameters.
+ * @argv: array of input parameters.
+ * Return: Always (0) Success.
+ */
 int main(int argc, char *argv[])
 {
 	int i, n;

@@ -3,26 +3,26 @@
 
 /**
  * add_nodeint_end - adds a node at end of the tail.
- * @head: a pointer to a pointer to an address of a node. 
+ * @head: a pointer to a pointer to an address of a node.
  * @n: A const input integer.
- * Return: Memory address of the node. 
+ * Return: Memory address of the node.
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 
-    listint_t *tail, *clone;
+	listint_t *tail, *clone;
 
-    tail = *head;
+	tail = *head;
 
-    if (!n)
-        return (NULL);
+	if (!n)
+		return (NULL);
 
-    clone = malloc(sizeof(listint_t));
+	clone = malloc(sizeof(listint_t));
 
-    if (!clone)
-        return (NULL);
-    
-    clone->n = n;
+	if (!clone)
+		return (NULL);
+
+	clone->n = n;
 	clone->next = NULL;
 
 	if (*head == NULL)
@@ -35,5 +35,5 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		tail->next = clone;
 	}
 
-    return (*head);
+	return (*head);
 }

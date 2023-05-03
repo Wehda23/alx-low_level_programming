@@ -2,8 +2,8 @@
 /**
  * free_listint - free a list
  * @head: the head of list
-* Return: void, no return
-*/
+ * Return: void, no return
+ */
 void free_listint(listint_t *head)
 {
 	listint_t *position;

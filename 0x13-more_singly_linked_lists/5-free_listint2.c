@@ -3,7 +3,7 @@
  * free_listint2 - free a list
  * @head: the head of list
  * Return: void, no return
-*/
+ */
 void free_listint2(listint_t **head)
 {
 	listint_t *position, *actual;

@@ -3,8 +3,8 @@
 
 /**
  * binary_to_uint - Function that converts binary to unsigned int.
- * @b: is a pointer to a character. 
- * Return: Returns unsigned int. 
+ * @b: is a pointer to a character.
+ * Return: Returns unsigned int.
  */
 unsigned int binary_to_uint(const char *b)
 {

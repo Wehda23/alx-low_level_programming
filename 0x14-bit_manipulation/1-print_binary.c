@@ -2,7 +2,7 @@
 
 
 /**
- * print_binary - decimal to binary 
+ * print_binary - decimal to binary
  * @n: unsinged long int
  * Return: Void
  */

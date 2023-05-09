@@ -9,28 +9,28 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int file, length, w;
+	int folder, length, w;
 
-	if (filename == NULL)
-		return (-1);
+    if (filename == NULL)
+        return (-1);
 
-	if (text_content != NULL)
-	{
-		while (text_content[length] != '\0')
-			length++;
+    folder = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 
-		file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+    if (folder == -1)
+        return (-1);
 
-		if (file == -1)
-			return (-1);
+    if (text_content != NULL)
+    {
 
-		w = write(file, text_content, length);
+            while (text_content[length++]);
+            
+            w = write(folder, text_content, length);
 
-		if (w == -1)
-			return (-1);
-	}
+            if (w == -1)
+                return (-1);
+    }
 
-	close(file);
+    close(folder);
 
-	return (1);
+    return (1);
 }

@@ -2,43 +2,43 @@
 
 /**
  * read_textfile - function that reads the text entered from system.
- * @filename: the words in the file in form of a character pointer. 
+ * @filename: the words in the file in form of a character pointer.
  * @letters: number of letters in the file.
  * Return: The number of letters of the file printed.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 
-    int folder, read_, write_;
-    char *c;
+	int folder, read_, write_;
+	char *c;
 
-    if (filename == NULL)
-        return (0);
+	if (filename == NULL)
+		return (0);
 
-    c = malloc(sizeof(char) * letters);
+	c = malloc(sizeof(char) * letters);
 
-    if (c == NULL)
-        return (0);
-    
-    folder = open(filename, O_RDONLY, 600);
+	if (c == NULL)
+		return (0);
 
-    if (folder == -1)
-    {
-        free(c);
-        return (0);
-    }
+	folder = open(filename, O_RDONLY, 600);
 
-    read_ = read(folder, c, letters);
+	if (folder == -1)
+	{
+		free(c);
+		return (0);
+	}
 
-    if (read_ == -1)
-    {
-        free(c);
-        return (0);
-    }
+	read_ = read(folder, c, letters);
 
-    write_ = write(STDOUT_FILENO, c, read_);
+	if (read_ == -1)
+	{
+		free(c);
+		return (0);
+	}
 
-	if (write_ != read_|| write_ == -1)
+	write_ = write(STDOUT_FILENO, c, read_);
+
+	if (write_ != read_ || write_ == -1)
 	{
 		return (0);
 	}

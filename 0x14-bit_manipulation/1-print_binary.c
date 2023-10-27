@@ -1,35 +1,30 @@
 #include "main.h"
 
+
 /**
- * print_binary - function that prints the binary representation of a number.
- * @n: takes in an unsinged long int.
+ * print_binary - decimal to binary
+ * @n: unsinged long int
+ * Return: Void
  */
 void print_binary(unsigned long int n)
 {
-	char s[1024];
-	int i = 0, number = n, modulus = 0, index = 0, j;
+	int flag = 0;
+	unsigned long int mask = 1;
 
-	if (number == 0)
+	mask <<= 63;
+	if (n == 0)
 		_putchar('0');
-	else
-	{
-		for (index = 0; number > 0; index++)
-		{
-			modulus = number % 2;
-			number /= 2;
-			if (modulus == 1)
-				s[index] = '1';
-			else
-				s[index] = '0';
 
-			i = index;
+	while (mask > 0)
+	{
+		if ((n & mask) == 0 && flag == 1)
+			_putchar('0');
+		if ((n & mask) != 0)
+		{
+			_putchar('1');
+			flag = 1;
 		}
 
-		s[i + 1] = '\0';
-
-		for (j = i; j >= 0; j--)
-			_putchar(s[j]);
+		mask = mask >> 1;
 	}
-
 }
-

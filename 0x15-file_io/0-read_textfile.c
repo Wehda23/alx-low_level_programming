@@ -8,44 +8,43 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t bytesRead = fread(buffer, 1, letters, file);
-	FILE *file = fopen(filename, "r");
-	ssize_t bytesWritten = write(STDOUT_FILENO, buffer, bytesRead);
-	char *buffer = (char *)malloc(letters);
 
+	int folder, read_, write_;
+	char *c;
 
 	if (filename == NULL)
+		return (0);
+
+	c = malloc(sizeof(char) * letters);
+
+	if (c == NULL)
+		return (0);
+
+	folder = open(filename, O_RDONLY, 600);
+
+	if (folder == -1)
+	{
+		free(c);
+		return (0);
+	}
+
+	read_ = read(folder, c, letters);
+
+	if (read_ == -1)
+	{
+		free(c);
+		return (0);
+	}
+
+	write_ = write(STDOUT_FILENO, c, read_);
+
+	if (write_ != read_ || write_ == -1)
 	{
 		return (0);
 	}
 
-	if (file == NULL)
-	{
-		return (0);
-	}
+	free(c);
+	close(folder);
 
-
-	if (buffer == NULL)
-	{
-		fclose(file);
-		return (0);
-	}
-
-	if (bytesRead <= 0)
-	{
-		fclose(file);
-		free(buffer);
-		return (0);
-	}
-
-	if (bytesWritten <= 0 || (size_t)bytesWritten < bytesRead)
-	{
-		fclose(file);
-		free(buffer);
-		return (0);
-	}
-
-	fclose(file);
-	free(buffer);
-	return (bytesRead);
+	return (write_);
 }

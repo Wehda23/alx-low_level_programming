@@ -19,36 +19,36 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename == NULL)
 	{
-		return 0;
+		return (0);
 	}
 
-	if (file == NULL) 
+	if (file == NULL)
 	{
-		return 0;
+		return (0);
 	}
 
 
-	if (buffer == NULL) 
-	{
-		fclose(file);
-		return 0;
-	}
-
-	if (bytesRead <= 0) 
+	if (buffer == NULL)
 	{
 		fclose(file);
-		free(buffer);
-		return 0;
+		return (0);
 	}
 
-	if (bytesWritten <= 0 || (size_t)bytesWritten < bytesRead) 
+	if (bytesRead <= 0)
 	{
 		fclose(file);
 		free(buffer);
-		return 0;
+		return (0);
+	}
+
+	if (bytesWritten <= 0 || (size_t)bytesWritten < bytesRead)
+	{
+		fclose(file);
+		free(buffer);
+		return (0);
 	}
 
 	fclose(file);
 	free(buffer);
-	return bytesRead;
+	return (bytesRead);
 }

@@ -1,8 +1,5 @@
 #include "main.h"
 
-
-
-
 /**
  * read_textfile - Function that reads a file and prints the content of file.
  * @filename: File name

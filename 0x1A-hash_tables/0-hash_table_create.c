@@ -16,11 +16,12 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	}
 	new->size = size;
-	new->array = malloc(sizeof(hash_node_t) * size);
+	new->array = malloc(sizeof(hash_node_t *) * size);
 
 	if (!new->array)
 	{
 		fprintf(stderr, "Error Allocating memory\n");
+        free(new);
 		return (NULL);
 	}
 

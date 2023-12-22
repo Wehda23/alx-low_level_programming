@@ -21,7 +21,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (!new->array)
 	{
 		fprintf(stderr, "Error Allocating memory\n");
-        free(new);
+		free(new);
 		return (NULL);
 	}
 

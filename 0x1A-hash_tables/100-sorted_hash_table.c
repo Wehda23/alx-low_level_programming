@@ -148,7 +148,8 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 void shash_table_print(const shash_table_t *ht)
 {	
 	int count = 0;
-	shash_node_t *current
+	shash_node_t *current;
+
 	if (ht != NULL)
 	{
 		current = ht->shead;
@@ -158,6 +159,7 @@ void shash_table_print(const shash_table_t *ht)
 		{
 			if (count > 0)
 				printf(", ");
+			count = 1;
 			printf("'%s': '%s'", current->key, current-> value);
 			current = current->snext;
 		}

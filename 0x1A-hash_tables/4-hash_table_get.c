@@ -9,7 +9,6 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	char *value;
 	int index;
 
 	if (ht == NULL || key == NULL || *key == '\0')
@@ -20,7 +19,5 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (ht->array[index] == NULL)
 		return (NULL);
 
-	value = strdup(ht->array[index]->value);
-
-	return (value);
+	return(ht->array[index]->value);
 }

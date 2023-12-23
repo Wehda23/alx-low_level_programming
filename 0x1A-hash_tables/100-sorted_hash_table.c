@@ -69,12 +69,14 @@ shash_node_t *create_skey(const char *key, const char *value)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
+	int index;
 	shash_node_t *new, *prev, *current;
 
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (0);
 
 	new = create_skey(key, value);
+	index = key_index((unsigned char *) key, ht->size);
 
 	if (new == NULL)
 		return (0);
@@ -84,6 +86,16 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		ht->shead = new;
 		ht->stail = new;
 		return (1);
+	}
+
+	if (ht->array[index] == NULL)
+	{
+		ht->array[index] = new;
+	}
+	else
+	{
+		new->next = ht->array[index];
+		ht->array[index] = new;
 	}
 
 	current = ht->shead;
@@ -98,12 +110,14 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (prev == NULL)
 	{
 		new->snext = ht->shead;
+		ht->shead->sprev = new;
 		ht->shead = new;
 	}
 	else
 	{
 		new->snext = current;
 		prev->snext = new;
+		new->sprev = prev;
 		ht->stail = current;
 	}
 	return (1);
@@ -164,5 +178,72 @@ void shash_table_print(const shash_table_t *ht)
 			current = current->snext;
 		}
 		printf("}\n");
+	}
+}
+
+/**
+ * shash_table_print_rev - print hash table revesibly
+ * @ht: hash table
+ */
+void shash_table_print_rev(const shash_table_t *ht)
+{
+	int count = 0;
+	shash_node_t *current;
+
+	if (ht != NULL)
+	{
+		current = ht->stail;
+		printf("{");
+		while (current != NULL)
+		{
+			if (count > 0)
+				printf(", ");
+			count = 1;
+			printf("'%s': '%s'", current->key, current->value);
+			current = current->sprev;
+		}
+		printf("}\n");
+	}
+}
+
+
+/**
+ * free_snode - helper function to free snodes
+ * @node: pointer to a node to be freed.
+ */
+void free_snode(shash_node_t *node)
+{
+	shash_node_t *temp;
+
+	while (node != NULL)
+	{
+		temp = node;
+		node = node->next;
+		free(temp->key);
+		free(temp->value);
+		free(temp);
+	}
+}
+
+/**
+ * shash_table_delete - frees entire hashtable
+ * @ht: hash table
+ */
+void shash_table_delete(shash_table_t *ht)
+{
+	unsigned long int index = 0;
+
+	if (ht != NULL)
+	{
+		for (; index < ht->size; index++)
+		{
+			if (ht->array[index] != NULL)
+			{
+				free_snode(ht->array[index]);
+				ht->array[index] = NULL;
+			}
+		}
+		free(ht->array);
+		free(ht);
 	}
 }

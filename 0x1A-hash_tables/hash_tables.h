@@ -85,4 +85,9 @@ void free_node(hash_node_t *node);
 void hash_table_delete(hash_table_t *ht);
 
 /* PHP HASH FUNCTION */
+shash_table_t *shash_table_create(unsigned long int size);
+shash_node_t *create_skey(const char *key, const char *value);
+int shash_table_set(shash_table_t *ht, const char *key, const char *value);
+char *shash_table_get(const shash_table_t *ht, const char *key);
+void shash_table_print(const shash_table_t *ht);
 #endif /* End hast_tables.h */

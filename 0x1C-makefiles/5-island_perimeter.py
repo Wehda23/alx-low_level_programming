@@ -18,7 +18,6 @@ def island_perimeter(grid) -> int:
     ]
     """
     # Define my variables
-    perimeter = lambda x, y: 2 * (x + y)
     length: int = 0
     width: int = 0
     # Dimensions
@@ -48,4 +47,4 @@ def island_perimeter(grid) -> int:
             width = summ
         row += 1
     # Calculate perimeter
-    return perimeter(length, width)
+    return 2 * (length + width)

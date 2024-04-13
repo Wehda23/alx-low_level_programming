@@ -26,6 +26,19 @@ Given a list `L` of `n` elements with values or records `L_0, L_1, ..., L_{n-1}`
 3. Increase `i` by `1`.
 4. If `i < n`, go to step 2. Otherwise, the search terminates unsuccessfully.
 
+### Implementation
+
+File of implmentation is `0-linear.c`
+
+Compile:
+```bash
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 0-main.c 0-linear.c -o 0-linear
+```
+
+Run:
+```bash
+./0-linear
+```
 
 ## Binary Search
 
@@ -60,4 +73,16 @@ function binary_search(A, n, T) is
     return unsuccessful
 ```
 
-##
+### Implementation
+
+File of implmentation is `1-binary.c`
+
+Compile:
+```bash
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 1-main.c 1-binary.c -o 1-binary
+```
+
+Run:
+```bash
+./1-binary
+```

@@ -15,13 +15,13 @@ We are going to different types of search including linear search, binary search
 
 ## Linear Search
 
-### Introduction
+### Introduction :book:
 
 ![Linear Search](https://sushrutkuchik.files.wordpress.com/2020/05/linear_search.gif?w=438)
 
 A linear search sequentially checks each element of the list until it finds an element that matches the target value. If the algorithm reaches the end of the list, the search terminates unsuccessfully.
 
-### Procedure
+### Procedure 🛠️
 
 Given a list `L` of `n` elements with values or records `L_0, L_1, ..., L_{n-1}`, and target value `T`, the following subroutine uses linear search to find the index of the target `T` in `L`.
 
@@ -30,7 +30,7 @@ Given a list `L` of `n` elements with values or records `L_0, L_1, ..., L_{n-1}`
 3. Increase `i` by `1`.
 4. If `i < n`, go to step 2. Otherwise, the search terminates unsuccessfully.
 
-### Implementation
+### Implementation 🔧
 
 File of implementation is `0-linear.c`
 
@@ -46,13 +46,13 @@ Run:
 
 ## Binary Search
 
-### Introduction
+### Introduction :book:
 
 ![Binary Search](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Binary-search-work.gif/220px-Binary-search-work.gif)
 
 Binary search works on sorted arrays. Binary search begins by comparing an element in the middle of the array with the target value. If the target value matches the element, its position in the array is returned. If the target value is less than the element, the search continues in the lower half of the array. If the target value is greater than the element, the search continues in the upper half of the array. By doing this, the algorithm eliminates the half in which the target value cannot lie in each iteration.
 
-### Procedure
+### Procedure 🛠️
 
 Given an array `A` of `n` elements with values or records `A_0, A_1, A_2, ..., A_{n-1}` sorted such that `A_0 <= A_1 <= A_2 <= ... <= A_{n-1}`, and target value `T`, the following subroutine uses binary search to find the index of `T` in `A`.
 
@@ -78,7 +78,7 @@ function binary_search(A, n, T) is
     return unsuccessful
 ```
 
-### Implementation
+### Implementation 🔧
 
 File of implementation is `1-binary.c`
 

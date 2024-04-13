@@ -15,6 +15,17 @@ We are going to different types of search including linear search, binary search
 
 ## Linear Search
 
+![Linear Search](https://sushrutkuchik.files.wordpress.com/2020/05/linear_search.gif?w=438)
+
+A linear search sequentially checks each element of the list until it finds an element that matches the target value. If the algorithm reaches the end of the list, the search terminates unsuccessfully.
+
+Given a list `L` of `n` elements with values or records `L_0, L_1, ..., L_{n-1}`, and target value `T`, the following subroutine uses linear search to find the index of the target `T` in `L`.
+
+1. Set `i` to `0`.
+2. If `L_i = T`, the search terminates successfully; return `i`.
+3. Increase `i` by `1`.
+4. If `i < n`, go to step 2. Otherwise, the search terminates unsuccessfully.
+
 
 ## Binary Search
 

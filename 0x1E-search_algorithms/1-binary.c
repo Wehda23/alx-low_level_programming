@@ -19,7 +19,7 @@ int binary_search(int *array, size_t size, int value)
 		/* While loop for binary search */
 		while (left <= right)
 		{
-            /* Print the array */
+			/* Print the array */
 			print_array(array, left, right);
 			/* Calculate the median */
 			median = left + (right - left) / 2;
@@ -52,16 +52,16 @@ int binary_search(int *array, size_t size, int value)
  */
 void print_array(int *array, int start, int end)
 {
-    int index = start;
+	int index = start;
 
-    printf("Searching in array: ");
-    while (index <= end)
-    {
-        printf("%d", array[index]);
-        if (index != end)
-            printf(", ");
+	printf("Searching in array: ");
+	while (index <= end)
+	{
+		printf("%d", array[index]);
+		if (index != end)
+			printf(", ");
 
-        index++;
-    }
-    printf("\n");
+		index++;
+	}
+	printf("\n");
 }

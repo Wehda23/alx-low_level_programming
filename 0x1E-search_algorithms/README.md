@@ -15,9 +15,13 @@ We are going to different types of search including linear search, binary search
 
 ## Linear Search
 
+### Introduction
+
 ![Linear Search](https://sushrutkuchik.files.wordpress.com/2020/05/linear_search.gif?w=438)
 
 A linear search sequentially checks each element of the list until it finds an element that matches the target value. If the algorithm reaches the end of the list, the search terminates unsuccessfully.
+
+### Procedure
 
 Given a list `L` of `n` elements with values or records `L_0, L_1, ..., L_{n-1}`, and target value `T`, the following subroutine uses linear search to find the index of the target `T` in `L`.
 
@@ -28,7 +32,7 @@ Given a list `L` of `n` elements with values or records `L_0, L_1, ..., L_{n-1}`
 
 ### Implementation
 
-File of implmentation is `0-linear.c`
+File of implementation is `0-linear.c`
 
 Compile:
 ```bash
@@ -42,6 +46,7 @@ Run:
 
 ## Binary Search
 
+### Introduction
 
 ![Binary Search](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Binary-search-work.gif/220px-Binary-search-work.gif)
 
@@ -75,7 +80,7 @@ function binary_search(A, n, T) is
 
 ### Implementation
 
-File of implmentation is `1-binary.c`
+File of implementation is `1-binary.c`
 
 Compile:
 ```bash

@@ -2,6 +2,16 @@
 
 We are going to different types of search including linear search, binary search in this project, Also explain what is the best search algorithm to use depending on your needs.
 
+### Search Algorithms
+
+1. Linear Search
+2. Binary Search
+3. Jump Search
+4. Interpolation Search
+5. Exponential Search
+6. Advanced Binary Search
+7. Jump Search in a single linked list
+8. Linear Search in a skip list
 
 ## Linear Search
 

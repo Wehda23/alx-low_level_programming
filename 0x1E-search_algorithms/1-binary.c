@@ -11,5 +11,17 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
+    int left = 0, right = (int) size - 1, median = 0;
 
+    median = (right / 2) - 1;
+
+    if (array != NULL)
+    {
+        while (left <= right)
+        {
+
+        };
+    }
+
+    return (-1);
 }

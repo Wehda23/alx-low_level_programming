@@ -91,3 +91,79 @@ Run:
 ```bash
 ./1-binary
 ```
+
+## Jump search
+
+### :book: Introduction
+
+![Jump Search](https://harkishen-singh.github.io/jump-search-visualisation/this.gif)
+
+Jump search, also known as block search, is a search algorithm commonly used for finding elements in ordered lists. It combines elements of linear search and binary search techniques, offering a compromise between their respective efficiencies.
+
+## Basic Jump Search Algorithm
+
+The basic jump search algorithm operates as follows:
+
+1. Determine the block size \( m \) as the square root of the length of the list, \( n \), i.e., \( m = \sqrt{n} \).
+2. Iterate over blocks of size \( m \) until finding a block whose last element is greater than the search key.
+3. Perform a linear search within the identified block to find the exact position of the search key.
+
+This algorithm runs in \( O(\sqrt{n}) \) time complexity, which is better than linear search but not as efficient as binary search.
+
+## Modified Jump Search Algorithm
+
+The basic jump search algorithm can be enhanced by performing multiple levels of jump search on sublists before resorting to a linear search. This modified algorithm, known as k-level jump search, operates as follows:
+
+1. Divide the list into sublists and perform jump search on each sublist recursively.
+2. Determine the optimum block size \( m_l \) for each level \( l \) based on the length of the sublist and the desired number of levels \( k \).
+3. Perform backward jumps at each level until reaching the appropriate sublist.
+4. Finally, perform a linear search within the identified sublist to find the exact position of the search key.
+
+The time complexity of the k-level jump search algorithm is \( O(k \cdot n^{1/(k+1)}) \), which provides a balance between efficiency and performance.
+
+## Usage
+
+To use the jump search algorithm:
+
+1. Implement the basic or modified version of the algorithm based on your requirements.
+2. Provide an ordered list and the search key as input to the algorithm.
+3. Execute the algorithm to find the position of the search key within the list.
+
+```
+algorithm JumpSearch is
+    input: An ordered list L, its length n and a search key s.
+    output: The position of s in L, or nothing if s is not in L.
+
+    a ← 0
+    b ← ⌊√n⌋
+
+    while Lmin(b,n)-1 < s do
+        a ← b
+        b ← b + ⌊√n⌋
+        if a ≥ n then
+            return nothing
+
+    while La < s do
+        a ← a + 1
+        if a = min(b, n)
+            return nothing
+
+    if La = s then
+        return a
+    else
+        return nothing
+```
+
+### 🔧 Implementation
+
+File of implementation is `./100-jump`
+
+Compile:
+```bash
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 100-main.c 100-jump.c -lm -o 100-jump
+```
+
+Run:
+```bash
+./100-jump
+```

@@ -100,7 +100,7 @@ Run:
 
 Jump search, also known as block search, is a search algorithm commonly used for finding elements in ordered lists. It combines elements of linear search and binary search techniques, offering a compromise between their respective efficiencies.
 
-## Basic Jump Search Algorithm
+### Basic Jump Search Algorithm
 
 The basic jump search algorithm operates as follows:
 
@@ -110,7 +110,7 @@ The basic jump search algorithm operates as follows:
 
 This algorithm runs in \( O(\sqrt{n}) \) time complexity, which is better than linear search but not as efficient as binary search.
 
-## Modified Jump Search Algorithm
+### Modified Jump Search Algorithm
 
 The basic jump search algorithm can be enhanced by performing multiple levels of jump search on sublists before resorting to a linear search. This modified algorithm, known as k-level jump search, operates as follows:
 
@@ -121,7 +121,7 @@ The basic jump search algorithm can be enhanced by performing multiple levels of
 
 The time complexity of the k-level jump search algorithm is \( O(k \cdot n^{1/(k+1)}) \), which provides a balance between efficiency and performance.
 
-## Usage
+### Usage
 
 To use the jump search algorithm:
 

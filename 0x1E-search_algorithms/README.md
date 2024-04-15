@@ -167,3 +167,62 @@ Run:
 ```bash
 ./100-jump
 ```
+
+## Interpolation Search
+
+### :book: Introduction
+
+![Interpolation Search](https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Interpolation_sort.gif/220px-Interpolation_sort.gif)
+
+Interpolation search is an algorithm for searching for a key in an array that has been ordered by numerical values assigned to the keys (key values). It was first described by W. W. Peterson in 1957.[1] Interpolation search resembles the method by which people search a telephone directory for a name (the key value by which the book's entries are ordered): in each step the algorithm calculates where in the remaining search space the sought item might be, based on the key values at the bounds of the search space and the value of the sought key, usually via a linear interpolation. The key value actually found at this estimated position is then compared to the key value being sought. If it is not equal, then depending on the comparison, the remaining search space is reduced to the part before or after the estimated position. This method will only work if calculations on the size of differences between key values are sensible.
+
+### 🛠️ Procedure
+
+1. Initialize variables:
+   - `low` to the index of the first element in the array.
+   - `high` to the index of the last element in the array.
+
+2. Repeat the following steps until the key is found or `low` is greater than `high`:
+   a. Calculate the probe position using the interpolation formula:
+      ```
+      probe = low + ((key - array[low]) * (high - low) / (array[high] - array[low]))
+      ```
+   b. If `array[probe]` equals the key, return `probe`.
+   c. If `array[probe]` is less than the key, update `low` to `probe + 1`.
+   d. If `array[probe]` is greater than the key, update `high` to `probe - 1`.
+
+3. If the key is not found, return `-1`.
+
+### Pseudo-Code
+
+```plaintext
+function interpolation_search(array, key):
+    low = 0
+    high = length(array) - 1
+
+    while low <= high and key >= array[low] and key <= array[high]:
+        probe = low + ((key - array[low]) * (high - low) / (array[high] - array[low]))
+
+        if array[probe] == key:
+            return probe
+        elif array[probe] < key:
+            low = probe + 1
+        else:
+            high = probe - 1
+
+    return -1
+```
+
+### 🔧 Implementation
+
+File of implementation is `102-interpolation.c`
+
+Compile:
+```bash
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 102-main.c 102-interpolation.c -o 102-interpolation
+```
+
+Run:
+```bash
+./102-interpolation
+```

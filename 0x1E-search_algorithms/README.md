@@ -261,14 +261,14 @@ function exponential_search(array, key):
 
 ### 🔧 Implementation
 
-File of implementation is `102-interpolation.c`
+File of implementation is `103-exponential.c`
 
 Compile:
 ```bash
-gcc -Wall -Wextra -Werror -pedantic -std=gnu89 102-main.c 102-interpolation.c -o 102-interpolation
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 103-main.c 103-exponential.c -o 103-exponential
 ```
 
 Run:
 ```bash
-./102-interpolation
+./103-exponential
 ```

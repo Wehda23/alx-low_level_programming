@@ -226,3 +226,49 @@ Run:
 ```bash
 ./102-interpolation
 ```
+
+## Exponential Search
+
+### :book: Introduction
+
+[![Video Title](https://i.ytimg.com/vi/BDVYtuWXgXE/maxresdefault.jpg)](https://www.youtube.com/watch?app=desktop&v=BDVYtuWXgXE)
+
+Exponential search is an algorithm used for searching for a key in a sorted array. It works by finding a range where the target value may be present and then performing a binary search within that range.
+
+### 🛠️ Procedure
+
+
+1. Determine an appropriate range by exponentially increasing the index until the value at that index is greater than the key or until the end of the array is reached.
+
+2. Perform a binary search within the determined range for the key.
+
+### Pseudo-Code
+
+```plaintext
+function exponential_search(array, key):
+    if array[0] == key:
+        return 0
+
+    n = length(array)
+    i = 1
+
+    while i < n and array[i] <= key:
+        i *= 2
+
+    return binary_search(array, key, i // 2, min(i, n - 1))
+
+```
+
+### 🔧 Implementation
+
+File of implementation is `102-interpolation.c`
+
+Compile:
+```bash
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 102-main.c 102-interpolation.c -o 102-interpolation
+```
+
+Run:
+```bash
+./102-interpolation
+```
